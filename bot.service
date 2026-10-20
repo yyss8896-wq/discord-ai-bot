@@ -1,0 +1,15 @@
+[Unit]
+Description=Discord AI Bot (Mira)
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/discord-ai-bot
+ExecStart=/home/ubuntu/discord-ai-bot/venv/bin/python main.py
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
